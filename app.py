@@ -1,11 +1,12 @@
 from flask import Flask, render_template,  request
 from joblib import load
 
+# App definition
+app = Flask(__name__)
+
+# Load trained classifier
 with open('C:\\Users\\PC\\Git_projects\\SentimentApp\\models\\LR_model.pkl', 'rb') as file:
     model = load(file)
-
-
-app = Flask(__name__)
 
 
 @app.route('/')
