@@ -25,19 +25,12 @@ header{
 			height:100px;
 			width:100%;
 			margin:0px;
-		}
-
+	
 header h2{
 	text-align:center;
 	color:#fff;
 
 }
-
-.btn-info {background-color: #2196F3;
-	height:40px;
-	width:100px;} 
-.btn-info:hover {background: #0b7dda;}
-
 
 .results{
 	border-radius: 15px 50px;
@@ -46,3 +39,19 @@ header h2{
     width: 200px;
     height: 150px;
 }
+
+input[type=submit] {
+      background-color: #f06237; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 0.95em;
+}    
+    
+input[type=submit]:hover {
+      background-color: #b0540e;
+}
+    
