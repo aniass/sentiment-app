@@ -1,7 +1,7 @@
 # Sentiment analysis app
 
 ## General info
-This project is a web app for Sentiment analysis of clothes reviews. It is a simple method on  implementing machine learning APIs using Python and Flask. The project and code for this application is available [here](https://github.com/aniass/Sentiment-analysis-reviews).
+This project is a web app for sentiment analysis of clothes reviews. It is a simple method on  implementing machine learning APIs using Python and Flask. The project and code for this application is available [here](https://github.com/aniass/Sentiment-analysis-reviews).
 
 ### Project includes:
 - Flask API script - **app.py**
