@@ -30,6 +30,7 @@ def text_preprocess(text):
 
 
 def read_data(path):
+    """ Function to read and clean text data"""
     data = pd.read_csv(path, header=0, index_col=0)
     data['Review'] = data['Review'].apply(text_preprocess)
     X = data['Review']
@@ -38,11 +39,14 @@ def read_data(path):
 
 
 def prepare_data(X, y):
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
+    """ Function to split data on train and test set """
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25,
+                                                        random_state=42)
     return X_train, X_test, y_train, y_test
 
 
 def get_models(X_train, X_test, y_train, y_test):
+    """ Function to calculating and save model """
     model = imbpipeline([('vect', CountVectorizer(min_df=5, ngram_range=(1, 2))),
                        ('tfidf', TfidfTransformer()),
                        ('smote', SMOTE()),
