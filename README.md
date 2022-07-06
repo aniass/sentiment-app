@@ -1,7 +1,14 @@
 # Sentiment analysis app
 
 ## General info
-The REST API Web App for Sentiment analysis of clothes reviews by using Flask and Machine Learning model. The project and code for this application is available [here](https://github.com/aniass/Sentiment-analysis-reviews).
+This project is a web app for sentiment analysis of clothes reviews. It is a simple method on  implementing machine learning APIs using Python and Flask. The project and code for this application is available [here](https://github.com/aniass/Sentiment-analysis-reviews).
+
+### Project includes:
+- Flask API script - **app.py**
+- script to build and pickle the classifier model - **training_model.py**
+- models - pickled model for import into API script;
+- templates, static - HTML files for the front-end.
+
 
 ### Technologies
 
