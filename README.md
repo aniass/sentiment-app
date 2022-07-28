@@ -19,6 +19,10 @@ Project is created with:
 
 **Running the app:**
 
-To run this app download the project files to your system, then go to the folder/directory where these files reside and run the script:
+To run this app install locally packages:
+
+    pip install -r requirements.txt
+
+Next download the project files to your system, then go to the folder/directory where these files reside and run the script:
 
     app.py
