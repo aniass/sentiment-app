@@ -16,7 +16,7 @@ clothes = ['dress', 'color', 'wear', 'top', 'sweater', 'material', 'shirt',
 lem = WordNetLemmatizer()
 
 
-URL_DATA = 'C:\\Python Scripts\\Projects_done\\Sentiment\\review_final.csv'
+URL_DATA = 'data\review_final.csv'
 
 
 def text_preprocess(text):
