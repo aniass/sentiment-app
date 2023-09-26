@@ -33,13 +33,13 @@ def read_data(path):
     """ Function to read and clean text data"""
     data = pd.read_csv(path, header=0, index_col=0)
     data['Review'] = data['Review'].apply(text_preprocess)
+    return data
+
+
+def prepare_data(data):
+    """ Function to split data on train and test set """
     X = data['Review']
     y = data['Recommended']
-    return X, y
-
-
-def prepare_data(X, y):
-    """ Function to split data on train and test set """
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25,
                                                         random_state=42)
     return X_train, X_test, y_train, y_test
@@ -59,6 +59,6 @@ def get_models(X_train, X_test, y_train, y_test):
 
 
 if __name__ == '__main__':
-    X, y = read_data(URL_DATA)
-    X_train, X_test, y_train, y_test = prepare_data(X, y)
+    df = read_data(URL_DATA)
+    X_train, X_test, y_train, y_test = prepare_data(df)
     get_models(X_train, X_test, y_train, y_test)
