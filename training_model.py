@@ -20,7 +20,7 @@ URL_DATA = 'data\review_final.csv'
 
 
 def text_preprocess(text):
-    ''' The function to remove punctuation,
+    ''' Function to clean text data: remove punctuation,
     stopwords and apply stemming'''
     words = re.sub("[^a-zA-Z]", " ", text)
     words = [word.lower() for word in words.split() if word.lower() not in
@@ -30,14 +30,14 @@ def text_preprocess(text):
 
 
 def read_data(path):
-    """ Function to read and clean text data"""
+    """Function to read text data"""
     data = pd.read_csv(path, header=0, index_col=0)
     data['Review'] = data['Review'].apply(text_preprocess)
     return data
 
 
 def prepare_data(data):
-    """ Function to split data on train and test set """
+    """Function to split data on train and test set"""
     X = data['Review']
     y = data['Recommended']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25,
@@ -46,14 +46,16 @@ def prepare_data(data):
 
 
 def get_models(X_train, X_test, y_train, y_test):
-    """ Function to calculating and save model """
+    """Calculating models with score"""
     model = imbpipeline([('vect', CountVectorizer(min_df=5, ngram_range=(1, 2))),
                        ('tfidf', TfidfTransformer()),
                        ('smote', SMOTE()),
                        ('model', LogisticRegression()), ])
 
     model.fit(X_train, y_train)
+    # save model
     dump(model, 'models/LR_model.pkl')
+    # score
     pred = model.score(X_test, y_test)
     print(pred)
 
