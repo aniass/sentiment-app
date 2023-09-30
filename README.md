@@ -8,7 +8,7 @@ The project and code for this pretrained model is available [here](https://githu
 ### Project includes:
 - Flask API script - **app.py**
 - script to build and pickle the classifier model - **training_model.py**
-- models - pickled model for import into API script;
+- models - pickled pretrained model used in app,
 - templates, static - HTML files for the front-end.
 
 
