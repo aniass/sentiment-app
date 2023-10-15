@@ -5,7 +5,7 @@ from joblib import load
 app = Flask(__name__)
 
 # Load trained classifier
-with open('models\LR_model.pkl', 'rb') as file:
+with open('models/LR_model.pkl', 'rb') as file:
     model = load(file)
 
 
