@@ -1,22 +1,26 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Sentiment app</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"/>
     <h1>Sentiment Analysis App</h1>
-    
 </head>
+
 <body>
-     <header>
-            <div class="container">
-            <h2>Sentiment detector for clothes reviews</h2>
-    </div>
+    <header>
+        <div class="container">
+            <h1>Welcome to the Review Analyzer</h1>
+            <h2>Sentiment analysis for clothes reviews</h2>
+        </div>
     </header>
     
-    <p style="color:black;font-size:20;"><b>Your prediction is:</b></p>
+    <div class="container">
+        <p style="color:black; font-size:20;"><b>Your prediction is:</b></p>
+        
         <div id="results">
-    <p style="color:red;font-size:20;">{{ prediction }}.</p>
+            <p style="color:red; font-size:20;">{{ prediction }}.</p>
+        </div>
     </div>
-
 </body>
 </html>
