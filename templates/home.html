@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Sentiment app</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}" />
 </head>
 
 <body>
-     
-     <header>
-            <div class="container">
+    <header>
+        <div class="container">
             <div class="centered"> 
-            <header class="text-center text-white">
-            <h1 class="header"> Sentiment Analysis App</h1>
-            <h2>Sentiment detector for clothes reviews</h2>
-    <div/>
-    <header/>
+                <h1 class="header">Welcome to the Review Analyzer!</h1>
+                <h2>Sentiment analysis for clothes reviews</h2>
+            </div>
+        </div>
+    </header>
     
     <div class="container">
-    
-         <form action="/result" method = "POST"> 
-         <p class="desc">Type a your review and click on the submit button</p>
-	   
-	     <textarea name="text" rows="4" cols="50"></textarea>
-         <br>          
-	     <input type="submit" onclick = 'this.form.submit();'>  
-    </form>
-
+        <form action="/result" method = "POST"> 
+            <p class="desc">Type your review and click the submit button</p>
+            <textarea name="text" rows="4" cols="50"></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
     </div>
-
 </body>
 </html>
