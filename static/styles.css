@@ -1,38 +1,37 @@
-body{
+body {
 	font:15px/1.5 Arial, Helvetica,sans-serif;
 	padding: 0px;
 	background-color:#f4f3f3;
 }
 
-.container{
+container {
 	width:100%;
 	margin: auto;
 	overflow: hidden;
 }
 
-header{
-	background:#03A9F4;#35434a;
+header {
+	background:#03A9F4; /* Background color */
 	border-bottom:#448AFF 3px solid;
 	height:120px;
 	width:100%;
 	padding-top:30px;
-
 }
 
-.main-header{
-			text-align:center;
-			background-color: blue;
-			height:100px;
-			width:100%;
-			margin:0px;
+.main-header {
+	text-align:center;
+	background-color: blue;
+	height:100px;
+	width:100%;
+	margin:0px;
+}
 	
-header h2{
+header h2 {
 	text-align:center;
 	color:#fff;
-
 }
 
-.results{
+results {
 	border-radius: 15px 50px;
     background: #345fe4;
     padding: 20px; 
@@ -41,17 +40,16 @@ header h2{
 }
 
 input[type=submit] {
-      background-color: #f06237; /* Green */
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 0.95em;
+	background-color: #f06237; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.95em;
 }    
     
 input[type=submit]:hover {
-      background-color: #b0540e;
+	background-color: #b0540e;
 }
-    
