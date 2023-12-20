@@ -4,9 +4,13 @@ from joblib import load
 # App definition
 app = Flask(__name__)
 
-# Load trained classifier
-with open('models\LR_model.pkl', 'rb') as file:
-    model = load(file)
+
+def load_model():
+    '''Load trained model'''
+    with open('models\LR_model.pkl', 'rb') as file:
+        return load(file)
+
+model = load_model()
 
 
 @app.route('/')
