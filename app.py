@@ -22,12 +22,18 @@ def home():
 def get_result():
     if request.method == 'POST':
         input_text = request.form['text']
+        
+        if not input_text:
+            return render_template("error.html", message="Input text is missing")
+        
         data = [input_text]
         result = model.predict(data)
+        
         if int(result) == 1:
             my_prediction = "This review is positive"
         else:
             my_prediction = "This review is negative"
+            
         return render_template("result.html", prediction=my_prediction)
 
 
