@@ -12,6 +12,10 @@ def load_model():
 
 model = load_model()
 
+# Load trained classifier
+with open('models/LR_model.pkl', 'rb') as file:
+    model = load(file)
+
 
 @app.route('/')
 def home():
