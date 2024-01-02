@@ -10,12 +10,6 @@ def load_model():
     with open('models\LR_model.pkl', 'rb') as file:
         return load(file)
 
-model = load_model()
-
-# Load trained classifier
-with open('models/LR_model.pkl', 'rb') as file:
-    model = load(file)
-
 
 @app.route('/')
 def home():
@@ -31,6 +25,7 @@ def get_result():
             return render_template("error.html", message="Input text is missing")
         
         data = [input_text]
+        model = load_model()
         result = model.predict(data)
         
         if int(result) == 1:
