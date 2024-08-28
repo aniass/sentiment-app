@@ -20,8 +20,8 @@ URL_DATA = 'data\review_final.csv'
 
 
 def text_preprocess(text):
-    ''' Function to clean text data: remove punctuation,
-    stopwords and apply stemming'''
+    """Function to clean text data: remove punctuation,
+    stopwords and apply stemming"""
     words = re.sub("[^a-zA-Z]", " ", text)
     words = [word.lower() for word in words.split() if word.lower() not in
              stop_words and word.lower() not in clothes]
