@@ -30,13 +30,13 @@ def text_preprocess(text):
 
 
 def read_data(path):
-    """Function to read text data"""
+    """Function to read and preprocess data"""
     data = pd.read_csv(path, header=0, index_col=0)
     data['Review'] = data['Review'].apply(text_preprocess)
     return data
 
 
-def prepare_data(data):
+def splitting_data(data):
     """Function to split data on train and test set"""
     X = data['Review']
     y = data['Recommended']
@@ -45,8 +45,8 @@ def prepare_data(data):
     return X_train, X_test, y_train, y_test
 
 
-def get_models(X_train, X_test, y_train, y_test):
-    """Calculating models with score"""
+def train_models(X_train, X_test, y_train, y_test):
+    """Calculate models with score"""
     model = imbpipeline([('vect', CountVectorizer(min_df=5, ngram_range=(1, 2))),
                        ('tfidf', TfidfTransformer()),
                        ('smote', SMOTE()),
@@ -57,10 +57,11 @@ def get_models(X_train, X_test, y_train, y_test):
     dump(model, 'models/LR_model.pkl')
     # score
     pred = model.score(X_test, y_test)
-    print(pred)
+    return pred
 
 
 if __name__ == '__main__':
     df = read_data(URL_DATA)
-    X_train, X_test, y_train, y_test = prepare_data(df)
-    get_models(X_train, X_test, y_train, y_test)
+    X_train, X_test, y_train, y_test = splitting_data(df)
+    result_models = train_models(X_train, X_test, y_train, y_test)
+    print(result_models)
